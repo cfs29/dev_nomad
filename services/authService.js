@@ -30,3 +30,15 @@ signInWithEmailAndPassword(auth, email, password)
         const errorMessage = error.message;
         console.error(`Code: ${errorCode}, Message: ${errorMessage}`);
     });
+
+
+updateProfile(auth.currentUser, {
+  displayName, photoURL
+}).then(() => {
+  console.log(`Usuario modificado: ${userProfileUpdated}`)
+  console.log(`Nome de usuario: ${displayName}, Foto de perfil: ${photoURL}`)
+}).catch((error) => {
+const errorCode = error.code
+const errorMessage = error.message
+console.error(`Code: ${errorCode}, Message: ${errorMessage}`)
+});
